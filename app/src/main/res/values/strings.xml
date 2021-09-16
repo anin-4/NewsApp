@@ -6,4 +6,9 @@
     <string name="title">TITLE</string>
     <string name="description">DESCRIPTION</string>
     <string name="published_at">PUBLISHED AT</string>
+    <string name="breaking_news_icon">breaking News icon</string>
+    <string name="saved_news_page">Saved News page</string>
+    <string name="search_news_page">Search news page</string>
+    <string name="breaking_news">Breaking News</string>
+    <string name="favorites">favorites</string>
 </resources>
