@@ -1,7 +1,6 @@
 package com.example.newsapp.ui.fragments.breakingnewsfragment
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.databinding.ItemArticlePreviewBinding
@@ -12,13 +11,11 @@ class BreakingNewsRecyclerViewAdapter:RecyclerView.Adapter<ArticleViewHolder>() 
 
 
     //will display data that is received from the api
-    var items= mutableListOf<NewsAppDomain>()
+    var items= listOf<NewsAppDomain>()
         set(value){
         field=value
         notifyDataSetChanged()
     }
-
-    var itemClickListener:((view: View, item:NewsAppDomain, position:Int)->Unit)?=null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
         val binding=ItemArticlePreviewBinding.inflate(LayoutInflater.from(parent.context),parent,false)

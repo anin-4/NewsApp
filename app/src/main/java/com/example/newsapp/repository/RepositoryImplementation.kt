@@ -11,8 +11,8 @@ class RepositoryImplementation @Inject constructor(
     private val retrofitService: RetrofitService,
     private val networkMapperImplementation: NetworkMapperImplementation
 ):RepositoryInterface {
-    override suspend fun getListOfNetworkEntityBreaking(page:Int): List<NewsAppDomain> {
-        return networkMapperImplementation.fromNetworkListToDomainList(retrofitService.getBreakingNews(page=page).articles)
+    override suspend fun getListOfNetworkEntityBreaking(pager:Int): List<NewsAppDomain> {
+        return networkMapperImplementation.fromNetworkListToDomainList(retrofitService.getBreakingNews(page=pager).articles)
     }
 
     override suspend fun pushIntoDatabase(newsAppDomain: NewsAppDomain) {

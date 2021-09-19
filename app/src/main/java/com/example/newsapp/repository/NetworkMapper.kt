@@ -4,5 +4,5 @@ interface NetworkMapper<DomainEntity,NetworkEntity> {
 
     fun fromNetworkToDomain(networkEntity: NetworkEntity):DomainEntity
 
-    fun fromDomainToNetwork(domainEntity: DomainEntity):NetworkEntity
+
 }

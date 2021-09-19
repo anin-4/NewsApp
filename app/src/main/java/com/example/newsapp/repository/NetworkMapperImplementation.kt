@@ -18,10 +18,6 @@ class NetworkMapperImplementation:NetworkMapper<NewsAppDomain,Article> {
         )
     }
 
-    override fun fromDomainToNetwork(domainEntity: NewsAppDomain): Article {
-        TODO("Not yet implemented")
-    }
-
     fun fromNetworkListToDomainList(listNetworkEntity:List<Article>):List<NewsAppDomain>{
         return listNetworkEntity.map{
             fromNetworkToDomain(it)
