@@ -6,11 +6,11 @@
 
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.example.newsapp.ui.fragments.ArticleFragment"
+        android:name="com.example.newsapp.ui.fragments.articlefragment.ArticleFragment"
         android:label="ArticleFragment"/>
     <fragment
         android:id="@+id/breakingNewsFragment"
-        android:name="com.example.newsapp.ui.fragments.BreakingNewsFragment"
+        android:name="com.example.newsapp.ui.fragments.breakingnewsfragment.BreakingNewsFragment"
         android:label="BreakingNewsFragment">
         <action
             android:id="@+id/action_breakingNewsFragment_to_articleFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
-        android:name="com.example.newsapp.ui.fragments.SavedNewsFragment"
+        android:name="com.example.newsapp.ui.fragments.savednewsfragment.SavedNewsFragment"
         android:label="SavedNewsFragment">
         <action
             android:id="@+id/action_savedNewsFragment_to_articleFragment"
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchNewsFragment"
-        android:name="com.example.newsapp.ui.fragments.SearchNewsFragment"
+        android:name="com.example.newsapp.ui.fragments.searchnewsfragment.SearchNewsFragment"
         android:label="SearchNewsFragment">
         <action
             android:id="@+id/action_searchNewsFragment_to_articleFragment"
