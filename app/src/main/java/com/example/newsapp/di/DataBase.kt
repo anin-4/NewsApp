@@ -2,6 +2,8 @@ package com.example.newsapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.newsapp.repository.EntityMapperImplementation
+import com.example.newsapp.room.NewsAppDao
 import com.example.newsapp.room.NewsAppDatabase
 import dagger.Module
 import dagger.Provides
@@ -27,5 +29,13 @@ object DataBase {
 
     @Singleton
     @Provides
-    fun provideDao(newsAppDatabase: NewsAppDatabase)=newsAppDatabase.NewsAppDao()
+    fun provideDao(newsAppDatabase: NewsAppDatabase):NewsAppDao=newsAppDatabase.NewsAppDao()
+
+
+
+    @Provides
+    @Singleton
+    fun provideEntityMapperImplementation(): EntityMapperImplementation {
+        return EntityMapperImplementation()
+    }
 }
