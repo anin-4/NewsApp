@@ -1,20 +1,19 @@
-package com.example.newsapp.ui.fragments.breakingnewsfragment
+package com.example.newsapp.ui.fragments
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.Constants.TAG
+import com.example.newsapp.utilspackage.Constants.TAG
 import com.example.newsapp.domain.NewsAppDomain
-import com.example.newsapp.repository.RepositoryImplementation
 import com.example.newsapp.repository.RepositoryInterface
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class BreakingNewsViewModel @Inject constructor(
+class NewsViewModel @Inject constructor(
     private var repository:RepositoryInterface
 ): ViewModel() {
 
