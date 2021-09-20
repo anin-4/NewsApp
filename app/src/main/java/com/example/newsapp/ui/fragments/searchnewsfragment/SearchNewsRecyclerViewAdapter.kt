@@ -11,7 +11,7 @@ import com.example.newsapp.ui.fragments.ArticleViewHolder
 
 class SearchNewsRecyclerViewAdapter:RecyclerView.Adapter<ArticleViewHolder>() {
 
-    var items= mutableListOf<Article>()
+    var items= listOf<Article>()
         set(value){
             field=value
             notifyDataSetChanged()

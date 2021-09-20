@@ -25,6 +25,14 @@ class NewsViewModel @Inject constructor(
 
     var breakingNewsPageNumber=1
 
+    var searchNewsPageNumber=1
+
+
+    private var _searchNewsItems= MutableLiveData<Resource<NetworkResponse>>()
+
+    val searchNewsItems:LiveData<Resource<NetworkResponse>>
+    get()= _searchNewsItems
+
     init {
         getBreakingNewsArticles()
     }
@@ -37,7 +45,24 @@ class NewsViewModel @Inject constructor(
         }
     }
 
+    fun getSearchNewsArticles(query:String=""){
+        viewModelScope.launch {
+            _searchNewsItems.postValue(Resource.Loading())
+            val response= repository.getSearchNews(query,searchNewsPageNumber)
+            _searchNewsItems.postValue(handleSearchNewsResponse(response))
+        }
+    }
+
     private fun handleBreakingNewsResponse(item: Response<NetworkResponse>):Resource<NetworkResponse>{
+        if(item.isSuccessful){
+            item.body()?.let{
+                return Resource.Success(it)
+            }
+        }
+        return Resource.Error(msg="Not connected to internet")
+    }
+
+    private fun handleSearchNewsResponse(item: Response<NetworkResponse>):Resource<NetworkResponse>{
         if(item.isSuccessful){
             item.body()?.let{
                 return Resource.Success(it)
