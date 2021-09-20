@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.newsapp.R
 import com.example.newsapp.Resource
 import com.example.newsapp.databinding.FragmentSearchNewsBinding
 import com.example.newsapp.ui.fragments.NewsViewModel
+import com.example.newsapp.ui.fragments.NewsRecyclerViewAdapter
 import com.example.newsapp.utilspackage.Constants
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
@@ -22,7 +25,7 @@ class SearchNewsFragment: Fragment() {
 
     private lateinit var binding:FragmentSearchNewsBinding
     private val viewModel: NewsViewModel by activityViewModels()
-    private val searchNewsRecyclerViewAdapter= SearchNewsRecyclerViewAdapter()
+    private val breakingNewsRecyclerViewAdapter: NewsRecyclerViewAdapter = NewsRecyclerViewAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +36,14 @@ class SearchNewsFragment: Fragment() {
 
         binding.rvSearchNews.apply {
             layoutManager=LinearLayoutManager(activity)
-            adapter=searchNewsRecyclerViewAdapter
+            adapter=breakingNewsRecyclerViewAdapter
+        }
+
+        breakingNewsRecyclerViewAdapter.itemClickListener={_,item,_->
+            val bundle=Bundle().apply {
+                putSerializable("article",item)
+            }
+            findNavController().navigate(R.id.action_searchNewsFragment_to_articleFragment,bundle)
         }
 
         var job: Job?=null
@@ -57,7 +67,7 @@ class SearchNewsFragment: Fragment() {
                 is Resource.Success -> {
                     binding.paginationProgressBar.visibility=View.INVISIBLE
                     it.data?.let{ response ->
-                        searchNewsRecyclerViewAdapter.items=response.articles
+                        breakingNewsRecyclerViewAdapter.items=response.articles
                     }
                 }
                 is Resource.Error -> {
