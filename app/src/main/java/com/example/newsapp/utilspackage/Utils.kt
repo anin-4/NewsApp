@@ -9,8 +9,8 @@ fun SimpleDraweeView.loadImage(url: String) {
 }
 
 sealed class Resource<T>(
-    data:T?=null,
-    msg:String?=null){
+    var data:T?=null,
+    var msg:String?=null){
 
     class Success<T>(data:T):Resource<T>(data)
 

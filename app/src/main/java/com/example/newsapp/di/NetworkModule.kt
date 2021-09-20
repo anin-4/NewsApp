@@ -1,8 +1,6 @@
 package com.example.newsapp.di
 
 import com.example.newsapp.network.RetrofitService
-import com.example.newsapp.repository.EntityMapperImplementation
-import com.example.newsapp.repository.NetworkMapperImplementation
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -29,12 +27,6 @@ object NetworkModule {
     @Singleton
     fun provideString():String{
         return "This is a silly string"
-    }
-
-    @Singleton
-    @Provides
-    fun provideNetworkMapperImplementation():NetworkMapperImplementation{
-        return NetworkMapperImplementation()
     }
 
 }

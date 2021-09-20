@@ -1,21 +1,19 @@
 package com.example.newsapp.ui.fragments
 
-import android.view.View
+
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.newsapp.R
 import com.example.newsapp.databinding.ItemArticlePreviewBinding
-import com.example.newsapp.domain.NewsAppDomain
 import com.example.newsapp.loadImage
+import com.example.newsapp.network.response.Article
 
 sealed class ArticleViewHolder(binding:ItemArticlePreviewBinding): RecyclerView.ViewHolder(binding.root){
 
         class ArticleItem( private val binding: ItemArticlePreviewBinding):ArticleViewHolder(binding){
-            fun bind(item:NewsAppDomain){
-                binding.tvTitle.text=item.title.toString()
-                binding.tvDescription.text=item.description.toString()
-                binding.tvSource.text=item.author.toString()
-                binding.tvPublishedAt.text=item.publishedAt.toString()
+            fun bind(item:Article){
+                binding.tvTitle.text=item.title
+                binding.tvDescription.text=item.description
+                binding.tvSource.text=item.author
+                binding.tvPublishedAt.text=item.publishedAt
                 item.urlToImage?.let { binding.ivArticleImage.loadImage(it) }
             }
         }

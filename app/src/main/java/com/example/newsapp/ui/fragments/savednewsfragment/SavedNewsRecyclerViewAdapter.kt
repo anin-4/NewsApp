@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.databinding.ItemArticlePreviewBinding
 import com.example.newsapp.domain.NewsAppDomain
+import com.example.newsapp.network.response.Article
 import com.example.newsapp.ui.fragments.ArticleViewHolder
 
 class SavedNewsRecyclerViewAdapter:RecyclerView.Adapter<ArticleViewHolder>() {
-    var items= mutableListOf<NewsAppDomain>()
+    var items= mutableListOf<Article>()
         set(value){
             field=value
             notifyDataSetChanged()

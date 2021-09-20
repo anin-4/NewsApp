@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.databinding.ItemArticlePreviewBinding
-import com.example.newsapp.domain.NewsAppDomain
+import com.example.newsapp.network.response.Article
 import com.example.newsapp.ui.fragments.ArticleViewHolder
 
 class BreakingNewsRecyclerViewAdapter:RecyclerView.Adapter<ArticleViewHolder>() {
 
 
     //will display data that is received from the api
-    var items= listOf<NewsAppDomain>()
+    var items= listOf<Article>()
         set(value){
         field=value
         notifyDataSetChanged()

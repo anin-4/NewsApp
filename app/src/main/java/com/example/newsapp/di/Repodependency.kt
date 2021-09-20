@@ -2,7 +2,6 @@ package com.example.newsapp.di
 
 import com.example.newsapp.network.RetrofitService
 import com.example.newsapp.repository.EntityMapperImplementation
-import com.example.newsapp.repository.NetworkMapperImplementation
 import com.example.newsapp.repository.RepositoryImplementation
 import com.example.newsapp.repository.RepositoryInterface
 import com.example.newsapp.room.NewsAppDao
@@ -22,9 +21,8 @@ object Repodependency {
     fun provideRepo(
         newsAppDao: NewsAppDao,
         entityMapperImplementation: EntityMapperImplementation,
-        networkMapperImplementation: NetworkMapperImplementation,
         retrofitService: RetrofitService
     ):RepositoryInterface{
-        return RepositoryImplementation(newsAppDao,entityMapperImplementation,retrofitService,networkMapperImplementation)
+        return RepositoryImplementation(newsAppDao,entityMapperImplementation,retrofitService)
     }
 }
