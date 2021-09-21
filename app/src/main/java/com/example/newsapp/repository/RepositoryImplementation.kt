@@ -2,6 +2,7 @@ package com.example.newsapp.repository
 
 import com.example.newsapp.domain.NewsAppDomain
 import com.example.newsapp.network.RetrofitService
+import com.example.newsapp.network.response.Article
 import com.example.newsapp.network.response.NetworkResponse
 import com.example.newsapp.room.NewsAppDao
 import retrofit2.Response
@@ -13,8 +14,8 @@ class RepositoryImplementation @Inject constructor(
     private val retrofitService: RetrofitService
 ):RepositoryInterface {
 
-    override suspend fun pushIntoDatabase(newsAppDomain: NewsAppDomain) {
-        newsAppDao.insert(entityMapperImplementation.fromDomainToEntity(newsAppDomain))
+    override suspend fun pushIntoDatabase(item:Article) {
+        newsAppDao.insert(entityMapperImplementation.fromArticleToEntity(item))
     }
 
     override suspend fun deleteFromDatabase(newsAppDomain: NewsAppDomain) {

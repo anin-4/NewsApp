@@ -12,7 +12,7 @@ sealed class ArticleViewHolder(binding: ItemArticlePreviewBinding): RecyclerView
     var itemClickListener:((view: View, item:Article, position:Int)->Unit)?=null
 
         class ArticleItem( private val binding: ItemArticlePreviewBinding):ArticleViewHolder(binding){
-            fun bind(item:Article){
+            fun bind(item: Article){
                 binding.tvTitle.text=item.title
                 binding.tvDescription.text=item.description
                 if(item.author!=null && item.author.length>22){
