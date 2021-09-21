@@ -24,6 +24,7 @@ class SavedNewsRecyclerViewAdapter:RecyclerView.Adapter<SavedNewsRecyclerViewHol
     }
 
     override fun onBindViewHolder(holder: SavedNewsRecyclerViewHolder, position: Int) {
+        holder.itemClickListener=itemClickListener
         when(holder){
             is SavedNewsRecyclerViewHolder.ArticleItem -> holder.bind(items[position])
         }
