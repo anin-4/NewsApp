@@ -14,7 +14,7 @@ import com.example.newsapp.ui.fragments.savednewsfragment.SavedNewsViewModel
 
 class ArticleFragment: Fragment() {
     private lateinit var binding:FragmentArticleBinding
-    val args:ArticleFragmentArgs by navArgs()
+    private val args:ArticleFragmentArgs by navArgs()
     private val viewModel:SavedNewsViewModel by activityViewModels()
 
     override fun onCreateView(

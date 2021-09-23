@@ -15,7 +15,6 @@ import com.example.newsapp.network.response.Article
 
 
 class SavedNewsFragment:Fragment() {
-
     private lateinit var binding:FragmentSavedNewsBinding
     private val viewModel:SavedNewsViewModel by activityViewModels()
     private val savedNewsRecyclerViewAdapter= SavedNewsRecyclerViewAdapter()
