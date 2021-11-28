@@ -1,5 +1,5 @@
 # NewsApp
-This was my second 'mostly' solo endeavour making an Android app on my own. Although I got the 'idea' for the app from a youtube series posted by 'Philipp Lackner' on youtube 
+This was my second solo endeavour making an Android app on my own. Although I got the 'idea' for the app from a youtube series posted by 'Philipp Lackner' on youtube 
 and also learned about pagination and some other things from the series but other than that it is mostly my implementation.
 
 The architecture I used is -MVVM
