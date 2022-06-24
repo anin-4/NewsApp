@@ -6,8 +6,8 @@ The architecture I used is -MVVM
 
 The various technologies, libraries that are used are:-
 
-1) Kotlin - The programming lang ( I seriously like the null check and safety feature here )
-2) Navigation component- Damn the making nav graphs and connecting them is fun!
+1) Kotlin - The programming language
+2) Navigation component
 3) dagger hilt - for dependency injection
 4) coroutines- For api request and room queries
 5) retrofit2- For getting data from the api
@@ -16,5 +16,22 @@ The various technologies, libraries that are used are:-
 
 This was a really awesome project and definitely helped me solidify my skills further!
 
-Those who are really interested in making a somewhat useful project and learn more about mvvm and other components in general definitely check Philipp's channel out. Cannot recommend it 
-enough.
+The app currently is made for only light mode screens
+
+# Installation
+
+Clone the project from android studio after enabling VCS, and click on the run button
+
+# Demo
+
+## The home page
+![img1](https://user-images.githubusercontent.com/66209574/175611576-6aa9a1ef-0b7e-4a17-ae24-d1eda2d0fd06.jpeg)
+
+## All the saved news can be viewed here
+![img2](https://user-images.githubusercontent.com/66209574/175611603-10331c32-8e3a-489b-b004-8e4bae6b0f63.jpeg)
+
+## reading the entire article also
+![img3](https://user-images.githubusercontent.com/66209574/175611617-c5dd8310-0c11-4ca4-b5be-0dc32c67cd34.jpeg)
+
+## Searching news on specific topic
+![img4](https://user-images.githubusercontent.com/66209574/175611631-37f3eb55-70f2-4370-9625-0899340b8a89.jpeg)
