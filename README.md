@@ -1,6 +1,5 @@
 # NewsApp
-This was my second solo endeavour making an Android app on my own. Although I got the 'idea' for the app from a youtube series posted by 'Philipp Lackner' on youtube 
-and also learned about pagination and some other things from the series but other than that it is mostly my implementation.
+This app showcases the latest and trending news. Users can search and filter out the news that piques their interest. Users can also read the full news articles and save them locally in their phone for viewing later without internet connection. 
 
 The architecture I used is -MVVM
 
